@@ -1,0 +1,23 @@
+//주사위를 6000번 던질때 1부터 6이 나오는 횟수를 시뮬레이션 하시오.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define NUM 600
+
+int main() {
+
+    int i, r;
+    int h[6]={0,};
+    srand(time(NULL));
+
+    for (i = 0; i < 6000; i++) {
+        r = rand() % 6; 
+        h[r] = h[r] + 1;
+    }
+
+    for (i = 0; i < 6; i++){
+      printf("[%d]=%d\n", i+1, h[i]);
+    }
+    return 0;
+}
+
